@@ -1,0 +1,285 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+:root {
+  --box-shadow-color-red: rgba(255, 0, 0, 0.381);
+  --box-shadow-color-blue: rgba(0, 183, 255, 0.381);
+  --box-shadow-color-blue2: rgba(88, 157, 185, 0.381);
+  --box-shadow-color-gray: rgba(153, 153, 153, 0.845);
+  --box-shadow-color-green: rgb(160, 220, 120);
+  --box-shadow-color-yellow: rgba(222, 210, 72, 0.801);
+  --box-shadow-color-purple: rgba(199, 129, 201, 0.603);
+}
+
+/* Dark Mode */
+.dark {
+  --box-shadow-color-red: rgba(83, 18, 18, 0.589);
+  --box-shadow-color-blue: rgba(16, 61, 79, 0.578);
+  --box-shadow-color-blue2: rgba(25, 40, 95, 0.582);
+  --box-shadow-color-gray: rgba(65, 63, 63, 0.514);
+  --box-shadow-color-green: rgba(46, 82, 23, 0.429);
+  --box-shadow-color-yellow: rgba(69, 64, 19, 0.555);
+  --box-shadow-color-purple: rgba(25, 40, 95, 0.582);
+}
+
+/* Shadow Styles */
+.shadow-red {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-red);
+}
+
+.shadow-blue {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-blue);
+}
+
+.shadow-blue2 {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-blue2);
+}
+
+.shadow-gray {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-gray);
+}
+
+.shadow-green {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-green);
+}
+
+.shadow-yellow {
+  box-shadow: 0 9px 20px 0 var(--box-shadow-color-yellow);
+}
+
+.shadow-purple {
+  box-shadow: 0 9px 30px 0 var(--box-shadow-color-purple);
+}
+
+   /* ============   OTA>CREATE  =========== */
+   .form-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .form-container h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .form-container .error-message {
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+      color: #c00;
+  }
+  
+  .form-container .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-container label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .form-container input,
+  .form-container select,
+  .form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .form-container button[type="submit"],
+  .form-container a.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #fff;
+    
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+
+  @media (max-width: 768px) {
+    .form-container {
+      max-width: 100%;
+    }
+  }
+
+  /* =========   SHOW/DAFTAR-OTA =========== */
+  
+  .container-ota {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .py-ota {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+  
+  .px-ota {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  
+  .mb-ota {
+    margin-bottom: 0;
+  }
+  
+  .bg-gray-ota {
+    
+  }
+  
+  .border-b-ota {
+    border-bottom-width: 1px;
+  }
+  
+  .border-gray-ota {
+    border-color: #cbd5e0;
+  }
+  
+  .text-gray-900-ota {
+    color: #222;
+  }
+  
+  /* .table-bordered-ota {
+    border-collapse: collapse;
+    border-radius: 50px;
+    width: 100%;
+  }
+  
+  .table-bordered-ota th,
+  .table-bordered-ota td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  } */
+  
+  .pull-right-ota {
+    float: right;
+  }
+  
+  .inline-block-ota {
+    display: inline-block;
+  }
+  
+  .align-middle-ota {
+    vertical-align: middle;
+  }
+  
+  .select-none-ota {
+    user-select: none;
+  }
+  
+  .border-ota {
+    border-width: 1px;
+  }
+  
+  .font-normal-ota {
+    font-weight: normal;
+  }
+  
+  .whitespace-no-wrap-ota {
+    white-space: nowrap;
+  }
+  
+  .rounded-ota {
+    border-radius: 0.25rem;
+  }
+  
+  .py-1-ota {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+  
+  .px-3-ota {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .leading-normal-ota {
+    line-height: 1.5;
+  }
+  
+  .no-underline-ota {
+    text-decoration: none;
+  }
+  
+  .bg-blue-600-ota {
+    
+  }
+  
+  .text-white-ota {
+    color: #fff;
+  }
+  
+  .hover\:bg-blue-600-ota:hover {
+    
+  }
+  
+  /* Tampilan Tambahan */
+  .container-ota {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .py-ota {
+    transition: background-color 0.3s ease;
+  }
+  
+  .py-ota:hover {
+    
+  }
+  
+  .py-1-ota {
+    transition: background-color 0.3s ease;
+  }
+  
+  .py-1-ota:hover {
+    
+  }
+  
+  .bg-blue-600-ota {
+    transition: background-color 0.3s ease;
+  }
+  
+  .bg-blue-600-ota:hover {
+    
+  }
+  
+  .text-gray-900-ota {
+    transition: color 0.3s ease;
+  }
+  
+  .text-gray-900-ota:hover {
+    color: #111;
+  }
+  
+  .border-ota {
+    transition: border-color 0.3s ease;
+  }
+  
+  .border-ota:hover {
+    border-color: #bbb;
+  }
+
+  
+  
