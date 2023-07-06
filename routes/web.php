@@ -16,7 +16,7 @@ use App\Http\Controllers\DaftarOtaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StokController;
 
-
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,36 +35,25 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
 
-Route::resource('calon-anggota', CalonAnggotaController::class)->only(['create', 'store']);
+// Route untuk akses admin dan komandan
+Route::middleware(['role:admin,komandan'])->group(function () {
+    // Pengaturan anggota
+    Route::resource('calon-anggota', CalonAnggotaController::class);
+    Route::resource('verifikasi-calon-anggota', VerifikasiCalonAnggotaController::class);
+    Route::resource('anggota', AnggotaController::class);
 
-//route akses admin
-Route::middleware(['role:admin'])->group(function () {
+    // Pengaturan user
+    Route::resource('peran', PeranController::class);
+    Route::resource('user', User2Controller::class);
 
-
+    // Pengaturan pondok mitra
+    Route::resource('calon-mitra', CalonMitraController::class);
+    Route::resource('pondok', PondokController::class);
+    Route::resource('daftar_trip', DaftarTripController::class);
+    Route::resource('trip-penyaluran-dana', TripPenyaluranDanaController::class);
+    Route::resource('daftar-ota', DaftarOtaController::class);
+    Route::resource('stok', StokController::class);
+    Route::resource('profile', ProfileController::class);
 });
-
-//pengaturan sistem anggota
-Route::resource('calon-anggota', CalonAnggotaController::class)->except(['create', 'store']);
-Route::resource('verifikasi-calon-anggota', VerifikasiCalonAnggotaController::class);
-Route::resource('anggota', AnggotaController::class);
-
-//pengaturan user
-Route::resource('peran', PeranController::class);
-Route::resource('user', User2Controller::class);
-//pengaturan pondok mitra
-Route::resource('calon-mitra', CalonMitraController::class);
-Route::resource('pondok', PondokController::class);
-Route::resource('daftar_trip', DaftarTripController::class);
-Route::resource('trip-penyaluran-dana', TripPenyaluranDanaController::class);
-Route::resource('daftar-ota', DaftarOtaController::class);
-Route::resource('stok', StokController::class);
-Route::resource('profile', ProfileController::class);
-
-
-//route akses member
-Route::middleware(['role:member'])->group(function () {
-
-
-    });

@@ -168,7 +168,7 @@
                     <label class="font-bold dark:text-white" for="jumlah_dll">Jumlah Lainnya:</label>
                     <input type="number" name="jumlah_dll" id="jumlah_dll" value="{{ old('jumlah_dll') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="tulis dengan format, misal -> fakir: 12 ; jika tidak ada maka tulis : 0" required>
+                        placeholder="" required>
                     @error('jumlah_dll')
                         <span>{{ $message }}</span>
                     @enderror

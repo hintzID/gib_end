@@ -58,16 +58,16 @@
                 <tbody>
                     @foreach ($anggota as $item)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <td class="px-5 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-5 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                 {{ $loop->iteration }}
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                 <b>PS.1.00{{ $item->id }}</b>
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                 {{ $item->verifikasiCalonAnggota->calonAnggota->nama_lengkap }}
                             </td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                 {{ $item->verifikasiCalonAnggota->calonAnggota->alamat_lengkap }}
                             </td>
                             <td class="px-6 py-4">

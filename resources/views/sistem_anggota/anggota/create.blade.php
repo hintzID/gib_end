@@ -22,7 +22,7 @@
             @csrf
 
             <div class="mb-8">
-                <label for="verifikasi_calon_anggota_id" class="block mb-2 text-lg font-medium text-gray-800">Verifikasi Calon Anggota</label>
+                <label for="verifikasi_calon_anggota_id" class="block mb-2 text-lg font-medium text-gray-800">Nama Anggota Baru</label>
                 <select name="verifikasi_calon_anggota_id" class="block w-full py-2 px-4 mb-2 text-base leading-normal bg-white border border-gray-200 rounded
                     @if ($verifikasiCalonAnggota->isEmpty() || !$verifikasiCalonAnggota->contains('verifikasi', 1))
                         text-red-800
@@ -40,9 +40,9 @@
                     @endif
                 </select>
             </div>
-            
-            
-            
+
+
+
 
 
             <div class="flex items-center">

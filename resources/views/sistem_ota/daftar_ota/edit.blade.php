@@ -10,10 +10,6 @@
                         <h1 class="text-4xl font-bold text-center py-4">Edit OTA</h1>
                     </div>
                 </div>
-                <div class="pull-right">
-                    <a class="inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600"
-                        href="{{ route('daftar-ota.index') }}">Kembali</a>
-                </div>
             </div>
         </div>
 
@@ -21,7 +17,7 @@
             <div class="relative px-3 py-3 mb-4 border rounded bg-red-200 border-red-300 text-red-800">
                 <strong>Error!</strong> Terdapat masalah dengan inputan Anda. Silakan periksa kembali.<br><br>
                 <ul>
-                    @foreach ($errors->all() as $error)
+                 @foreach ($errors->all() as $error)
                         <li>{{ $error }}</li>
                     @endforeach
                 </ul>
@@ -75,20 +71,24 @@
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
                     <div class="mb-4">
-                        <strong>Anggota:</strong>
+                        <strong>FR:</strong>
                         <select
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                             name="anggota_id">
                             @foreach ($anggota as $a)
                                 <option value="{{ $a->id }}" @if ($daftarOta->anggota_id == $a->id) selected @endif>
-                                    {{ $a->id }}</option>
+                                    {{ $daftarOta->anggota->verifikasiCalonAnggota->calonAnggota->nama_lengkap }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-                <div class="mb-10 text-center">
+                <div class="mb-10 text-center mr-1 px-3">
                     <button type="submit"
-                        class="inline-block align-middle text-center select-none  font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Simpan</button>
+                        class="inline-block align-middle text-center select-none  font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-green-600 text-white hover:bg-blue-600">Simpan</button>
+                </div>
+                <div class="pull-right">
+                    <a class="inline-block align-middle text-center select-none font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-gray-600 text-white hover:bg-blue-600"
+                        href="{{ route('daftar-ota.index') }}">Kembali</a>
                 </div>
             </div>
 

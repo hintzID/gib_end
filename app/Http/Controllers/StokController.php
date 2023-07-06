@@ -24,7 +24,7 @@ class StokController extends Controller
 
         $stok = $query->paginate(10);
 
-        return view('sistem_donasi.stok.index', compact('stok'));
+        return view('sistem_donasi.stok.index', compact('stok','search'));
     }
 
 
