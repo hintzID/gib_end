@@ -36,7 +36,8 @@
                 <select name="search" id="search" class="border border-gray-300 rounded-lg p-2">
                     <option value="">All</option>
                     @for ($year = date('Y'); $year >= 2020; $year--)
-                        <option value="{{ $year }}" {{ $year == $search ? 'selected' : '' }}>{{ $year }}</option>
+                        <option value="{{ $year }}" {{ $year == $search ? 'selected' : '' }}>{{ $year }}
+                        </option>
                     @endfor
                 </select>
 
@@ -93,9 +94,10 @@
                                 $previousPrice2 = $stok[$key - 1]->dana_masuk;
                                 $reduction2 = round((($item->dana_masuk - $previousPrice2) / $previousPrice2) * 100, 2);
 
-                                $previousPrice3 = ($stok[$key - 1]->dana_masuk * 0.9) / $item->harga_beras;
+                                $previousPrice3 = ($stok[$key - 1]->dana_masuk * 0.9) / $stok[$key - 1]->harga_beras;
                                 $reduction3 = round(((($item->dana_masuk * 0.9) / $item->harga_beras - $previousPrice3) / $previousPrice3) * 100, 2);
 
+                                echo $previousPrice3;
                             @endphp
                         @else
                             @php
@@ -145,7 +147,15 @@
                                 {{ number_format(($item->dana_masuk * 0.9) / $item->harga_beras / 20, 3, ',', '.') }} SAK
                             </td>
                             <td class="px-6 py-4 font-medium text-blue-900 text-center whitespace-nowrap dark:text-white">
-                                sama seperti % Donasi
+
+                                @if ($reduction3 < 0)
+                                    <p class="text-red-700">{{ abs($reduction3) }}%</p>
+                                @elseif ($reduction3 > 0)
+                                    <p class="text-green-700">{{ $reduction3 }}%</p>
+                                @else
+                                    -
+                                @endif
+
                             </td>
                             {{-- <td class="px-6 py-4 font-medium text-gray-900 text-center whitespace-nowrap dark:text-white">
                                 @php
@@ -212,10 +222,10 @@
                                 '.',
                             ) }}
                             SAK</td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ '-' }}
-                            </td>
-                            {{-- <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            {{ '-' }}
+                        </td>
+                        {{-- <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
                                 {{ number_format(
                                     $stok->sum(function ($item) {
                                         $result = ($item->dana_masuk * 0.9) / $item->harga_beras / 20;

@@ -116,7 +116,7 @@
                         <li>
                             <a href="/daftar-ota"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">
-                                Orang Tua Asuh</a>
+                                Daftar Orang Tua Asuh</a>
                         </li>
                     </ul>
                 </li>
@@ -149,6 +149,16 @@
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
                                 Mitra</a>
                         </li>
+                        <li>
+                            <a href="/daftar_trip"
+                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
+                                Trip</a>
+                        </li>
+                        <li>
+                            <a href="/trip-penyaluran-dana"
+                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
+                                Trip Donasi</a>
+                        </li>
                     </ul>
                 </li>
 
@@ -162,7 +172,7 @@
                             <path
                                 d="M7 1.414V2H2a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h5v1H2.5a1 1 0 0 0-.8.4L.725 8.7a.5.5 0 0 0 0 .6l.975 1.3a1 1 0 0 0 .8.4H7v5h2v-5h5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H9V6h4.5a1 1 0 0 0 .8-.4l.975-1.3a.5.5 0 0 0 0-.6L14.3 2.4a1 1 0 0 0-.8-.4H9v-.586a1 1 0 0 0-2 0zM13.5 3l.75 1-.75 1H2V3h11.5zm.5 5v2H2.5l-.75-1 .75-1H14z" />
                         </svg>
-                        <span class="flex-1 ml-3 text-left whitespace-nowrap"> Alur Distribusi</span>
+                        <span class="flex-1 ml-3 text-left whitespace-nowrap">Keuangan</span>
                         <svg class="w-6 h-6 text-gray-900 hover:text-gray-50 transition-colors duration-300"
                             fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd"
@@ -173,19 +183,15 @@
 
                     <ul id="dropdown-example-daftar-trip" class="hidden py-2 space-y-2">
                         <li>
-                            <a href="/daftar_trip"
-                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
-                                Trip</a>
-                        </li>
-                        <li>
-                            <a href="/trip-penyaluran-dana"
-                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Trip
-                                Distribusi Beras</a>
-                        </li>
-                        <li>
                             <a href="/stok"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Data
                                 Finansial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/stok"
+                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Pengeluaran
+                                DPD
                             </a>
                         </li>
                     </ul>

@@ -1,0 +1,5 @@
+@echo off
+
+start powershell.exe -NoExit -WindowStyle Hidden -Command "cd D:\laravel\gib_end; php artisan serve"
+start powershell.exe -NoExit -WindowStyle Hidden -Command "cd D:\laravel\gib_end; npm run dev"
+start powershell.exe -Command "start chrome http://127.0.0.1:8000"
