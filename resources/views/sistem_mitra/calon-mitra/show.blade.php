@@ -108,10 +108,24 @@
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     readonly>
             </div>
+            <div>
+                <label class="font-bold" for="jumlah_yatim">Jumlah Yatim:</label>
+                <input type="number" name="jumlah_yatim" id="jumlah_yatim"
+                    value="{{ $calonMitra->jumlah_yatim }}"
+                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                    readonly>
+            </div>
+            <div>
+                <label class="font-bold" for="jumlah_mustahiq">Jumlah Mustahiq:</label>
+                <input type="number" name="jumlah_mustahiq" id="jumlah_mustahiq" value="{{ $calonMitra->jumlah_mustahiq }}"
+                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                    readonly>
+            </div>
 
             <div>
-                <label class="font-bold" for="jumlah_dhuafa">Jumlah Mustahiq:</label>
-                <input type="number" name="jumlah_dhuafa" id="jumlah_dhuafa" value="{{ $calonMitra->jumlah_dhuafa }}"
+                <label class="font-bold" for="jumlah_piatu">Jumlah Santri Berprestasi:</label>
+                <input type="number" name="jumlah_piatu" id="jumlah_piatu"
+                    value="{{ $calonMitra->jumlah_piatu }}"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     readonly>
             </div>
@@ -122,7 +136,12 @@
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     readonly>
             </div>
-
+            <div>
+                <label class="font-bold" for="keterangan_jumlah_dll">Keterangan Jumlah Lainnya:</label>
+                <input type="text" name="keterangan_jumlah_dll" id="keterangan_jumlah_dll" value="{{ $calonMitra->keterangan_jumlah_dll }}"
+                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                    readonly>
+            </div>
             <div>
                 <label class="font-bold" for="jumlah_tk">Jumlah TK-PAUD:</label>
                 <input type="number" name="jumlah_tk" id="jumlah_tk" value="{{ $calonMitra->jumlah_tk }}"
@@ -213,12 +232,32 @@
 
             <div class="mb-3">
                 <label class="font-bold" for="prioritas">Grade:</label>
+                @php
+                $alias = '';
+                switch ($calonMitra->prioritas) {
+                    case 'A':
+                        $alias = 'Siasah';
+                        break;
+                    case 'B':
+                        $alias = 'Strategis';
+                        break;
+                    case 'C':
+                        $alias = 'Distribusi';
+                        break;
+                    case 'E':
+                        $alias = 'Tidak Ada';
+                        break;
+                    default:
+                        $alias = 'Alias Default';
+                }
+                @endphp
                 <input type="text"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    name="prioritas" id="prioritas" value="{{ $calonMitra->prioritas }}"
+                    name="prioritas" id="prioritas" value="{{ $alias }}"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     readonly>
             </div>
+
             <a href="{{ route('calon-mitra.index') }}"
                 class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-gray-600 text-white hover:bg-gray-700">Kembali</a>
         </div>

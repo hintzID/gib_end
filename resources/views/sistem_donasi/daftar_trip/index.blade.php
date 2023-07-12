@@ -38,8 +38,8 @@
                 <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-blue-900 ">
                     <tr>
                         <th scope="col" class="px-6 py-3">No</th>
-                        <th scope="col" class="px-6 py-3">Nama Trip</th>
-                        <th scope="col" class="px-6 py-3">PJ Trip</th>
+                        <th scope="col" class="px-6 py-3">Nama Jalur Distribusi</th>
+                        <th scope="col" class="px-6 py-3">PJ Jalur Distribusi</th>
                         <th scope="col" class="px-6 py-3">Keterangan</th>
                         <th scope="col" class="px-6 py-3">Action</th>
                     </tr>

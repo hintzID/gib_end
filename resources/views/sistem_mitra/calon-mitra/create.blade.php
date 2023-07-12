@@ -110,7 +110,8 @@
                 </div>
 
                 <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="jumlah_pengurus_tidak_menetap">Jumlah Pengurus Tidak Menetap:</label>
+                    <label class="font-bold dark:text-white" for="jumlah_pengurus_tidak_menetap">Jumlah Pengurus Tidak
+                        Menetap:</label>
                     <input type="number" name="jumlah_pengurus_tidak_menetap" id="jumlah_pengurus_tidak_menetap"
                         value="{{ old('jumlah_pengurus_tidak_menetap') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
@@ -137,17 +138,26 @@
                 </div>
                 <div class="mt-5">
                     <label class="font-bold dark:text-white" for="jumlah_yatim">Jumlah Yatim:</label>
-                    <input type="number" name="jumlah_yatim" id="jumlah_yatim"
-                        value="{{ old('jumlah_yatim') }}"
+                    <input type="number" name="jumlah_yatim" id="jumlah_yatim" value="{{ old('jumlah_yatim') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                     @error('jumlah_yatim')
                         <span>{{ $message }}</span>
                     @enderror
-                </div>                <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="jumlah_piatu">Jumlah Piatu:</label>
-                    <input type="number" name="jumlah_piatu" id="jumlah_piatu"
-                        value="{{ old('jumlah_piatu') }}"
+                </div>
+                <div class="mt-5">
+                    <label class="font-bold dark:text-white" for="jumlah_mustahiq">Jumlah Mustahiq:</label>
+                    <input type="number" name="jumlah_mustahiq" id="jumlah_mustahiq"
+                        value="{{ old('jumlah_mustahiq') }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required>
+                    @error('jumlah_mustahiq')
+                        <span>{{ $message }}</span>
+                    @enderror
+                </div>
+                <div class="mt-5">
+                    <label class="font-bold dark:text-white" for="jumlah_piatu">Jumlah Santri berprestasi:</label>
+                    <input type="number" name="jumlah_piatu" id="jumlah_piatu" value="{{ old('jumlah_piatu') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                     @error('jumlah_piatu')
@@ -155,28 +165,20 @@
                     @enderror
                 </div>
                 <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="jumlah_mustahiq">Jumlah Mustahiq:</label>
-                    <input type="number" name="jumlah_mustahiq" id="jumlah_mustahiq" value="{{ old('jumlah_mustahiq') }}"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required>
-                    @error('jumlah_mustahiq')
-                        <span>{{ $message }}</span>
-                    @enderror
-                </div>
-
-                <div class="mt-5">
                     <label class="font-bold dark:text-white" for="jumlah_dll">Jumlah Lainnya:</label>
                     <input type="number" name="jumlah_dll" id="jumlah_dll" value="{{ old('jumlah_dll') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="" required>
+                        placeholder="diisi angka" required>
                     @error('jumlah_dll')
                         <span>{{ $message }}</span>
                     @enderror
                 </div>
 
                 <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="keterangan_jumlah_dll">Keterangan Jumlah Lainnya:</label>
-                    <input type="text" name="keterangan_jumlah_dll" id="keterangan_jumlah_dll" value="{{ old('keterangan_jumlah_dll') }}"
+                    <label class="font-bold dark:text-white" for="keterangan_jumlah_dll">Keterangan Jumlah
+                        Lainnya:</label>
+                    <input type="text" name="keterangan_jumlah_dll" id="keterangan_jumlah_dll"
+                        value="{{ old('keterangan_jumlah_dll') }}"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="tulis dengan format, misal -> fakir: 12 ; jika tidak ada maka tulis : 0" required>
                     @error('keterangan_jumlah_dll')
@@ -286,68 +288,68 @@
                     <h3 class="text-2xl font-bold text-center py-4">Penilaian Surveyor</h3>
                 </div>
 
-               <div class="mt-5">
-    <label class="font-bold dark:text-white" for="tingkat_layak">Tingkat Layak:</label>
-    <select name="tingkat_layak" id="tingkat_layak"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        required>
-        <option value="">Pilih tingkat layak</option>
-        <option value="Layak" {{ old('tingkat_layak') == 'Layak' ? 'selected' : '' }}>Layak</option>
-        <option value="Tidak Layak" {{ old('tingkat_layak') == 'Tidak Layak' ? 'selected' : '' }}>Tidak Layak</option>
-    </select>
-    @error('tingkat_layak')
-        <span>{{ $message }}</span>
-    @enderror
-</div>
+                <div class="mt-5">
+                    <label class="font-bold dark:text-white" for="tingkat_layak">Tingkat Layak:</label>
+                    <select name="tingkat_layak" id="tingkat_layak"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required>
+                        <option value="">Pilih tingkat layak</option>
+                        <option value="Layak" {{ old('tingkat_layak') == 'Layak' ? 'selected' : '' }}>Layak</option>
+                        <option value="Tidak Layak" {{ old('tingkat_layak') == 'Tidak Layak' ? 'selected' : '' }}>Tidak
+                            Layak</option>
+                    </select>
+                    @error('tingkat_layak')
+                        <span>{{ $message }}</span>
+                    @enderror
+                </div>
 
-<div class="mb-3" class="mt-5">
-    <label class="font-bold dark:text-white" for="prioritas">Grade:</label>
-    <select name="prioritas" id="prioritas"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-        required>
-        <option value="">Pilih grade</option>
-        <option value="A">A</option>
-        <option value="B">B</option>
-        <option value="C">C</option>
-        <option value="D">D</option>
-        <option value="E">E</option>
-    </select>
-    @error('prioritas')
-        <span>{{ $message }}</span>
-    @enderror
-</div>
+                <div class="mb-3" class="mt-5">
+                    <label class="font-bold dark:text-white" for="prioritas">Grade:</label>
+                    <select name="prioritas" id="prioritas"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required>
+                        <option value="">Pilih grade</option>
+                        <option value="A">Siasah</option>
+                        <option value="B">Strategis</option>
+                        <option value="C">Distribusi</option>
+                        {{-- <option value="D">D</option> --}}
+                        <option value="E">Tidak ada</option>
+                    </select>
+                    @error('prioritas')
+                        <span>{{ $message }}</span>
+                    @enderror
+                </div>
 
-<script>
-    const tingkatLayak = document.getElementById('tingkat_layak');
-    const prioritas = document.getElementById('prioritas');
+                <script>
+                    const tingkatLayak = document.getElementById('tingkat_layak');
+                    const prioritas = document.getElementById('prioritas');
 
-    tingkatLayak.addEventListener('change', function() {
-        if (tingkatLayak.value === 'Layak') {
-            prioritas.options[0].selected = true;
-            prioritas.options[0].hidden = false;
-            prioritas.options[1].hidden = false;
-            prioritas.options[2].hidden = false;
-            prioritas.options[3].hidden = false;
-            prioritas.options[4].hidden = false;
-            prioritas.options[5].hidden = true;
-        } else if (tingkatLayak.value === 'Tidak Layak') {
-            prioritas.options[5].selected = true;
-            prioritas.options[0].hidden = true;
-            prioritas.options[1].hidden = true;
-            prioritas.options[2].hidden = true;
-            prioritas.options[3].hidden = true;
-            prioritas.options[4].hidden = true;
-        }
-        else if (tingkatLayak.value === '') {
-            prioritas.option.hidden = true;
-        }
-    });
-</script>
-
+                    tingkatLayak.addEventListener('change', function() {
+                        if (tingkatLayak.value === 'Layak') {
+                            prioritas.options[0].selected = true;
+                            prioritas.options[0].hidden = false;
+                            prioritas.options[1].hidden = false;
+                            prioritas.options[2].hidden = false;
+                            prioritas.options[3].hidden = false;
+                            // prioritas.options[4].hidden = false;
+                            prioritas.options[4].hidden = true;
+                        } else if (tingkatLayak.value === 'Tidak Layak') {
+                            prioritas.options[4].selected = true;
+                            prioritas.options[0].hidden = true;
+                            prioritas.options[1].hidden = true;
+                            prioritas.options[2].hidden = true;
+                            prioritas.options[3].hidden = true;
+                            // prioritas.options[4].hidden = true;
+                        } else if (tingkatLayak.value === '') {
+                            prioritas.option.hidden = true;
+                        }
+                    });
+                </script>
 
 
-            <button type="submit"
-                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-blue text-gray-800 border border-gray-200 rounded inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Simpan</button>
+
+                <button type="submit"
+                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-blue text-gray-800 border border-gray-200 rounded inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Simpan</button>
         </form>
     </div>
 @endsection

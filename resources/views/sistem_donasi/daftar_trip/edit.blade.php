@@ -31,7 +31,7 @@
             <div class="flex flex-wrap ">
                 <div class="md:w-full pr-4 pl-4">
                     <div class="mb-4 dark:text-white">
-                        <strong>Nama Trip:</strong>
+                        <strong>Nama Jalur DIstribusi:</strong>
                         <input type="text" name="nama_trip" value="{{ $daftarTrip->nama_trip }}"
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white dark:bg-gray-200 dark:text-blue-900 text-gray-800 border border-gray-200 rounded"
                             placeholder="Nama Trip">
@@ -40,7 +40,7 @@
 
                 <div class="md:w-full dark:text-white pr-4 pl-4">
                     <div class="mb-4">
-                        <label class="font-bold dark:text-white" for="anggota_id">PJ Trip:</label>
+                        <label class="font-bold dark:text-white" for="anggota_id">PJ Jalur Distribusi:</label>
                         <select
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                             name="anggota_id" required disabled>

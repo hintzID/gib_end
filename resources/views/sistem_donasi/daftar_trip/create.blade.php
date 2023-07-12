@@ -7,7 +7,7 @@
             <div class="lg:w-full pr-4 pl-4">
                 <div class="flex justify-center items-center">
                     <div class="bg-purple-200 dark:bg-blue-900 dark:text-white mb-10 rounded-lg px-10 w-1/2">
-                        <h1 class="text-4xl font-bold text-center py-4">Tambah Daftar Trip</h1>
+                        <h1 class="text-4xl font-bold text-center py-4">Tambah Jalur Distribusi</h1>
                     </div>
                 </div>
 
@@ -28,7 +28,7 @@
                     <div class="flex flex-wrap">
                         <div class="md:w-full dark:text-white pr-4 pl-4">
                             <div class="mb-4">
-                                <strong>Nama Trip:</strong>
+                                <strong>Nama Jalur Distribusi:</strong>
                                 <input type="text" name="nama_trip"
                                     class="block appearance-none dark:bg-gray-300 dark:text-blue-900 w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                                     placeholder="Nama Trip">
@@ -37,7 +37,7 @@
 
                         <div class="md:w-full dark:text-white pr-4 pl-4">
                             <div class="mb-4">
-                                <label class="font-bold dark:text-white" for="anggota_id">PJ Trip:</label>
+                                <label class="font-bold dark:text-white" for="anggota_id">PJ Jalur Distribusi:</label>
                                 <select class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                                         name="anggota_id" required>
                                     @foreach ($anggota as $a)

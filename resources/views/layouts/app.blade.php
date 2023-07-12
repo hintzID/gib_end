@@ -152,12 +152,12 @@
                         <li>
                             <a href="/daftar_trip"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
-                                Trip</a>
+                                Jalur Distribusi</a>
                         </li>
                         <li>
                             <a href="/trip-penyaluran-dana"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar
-                                Trip Donasi</a>
+                                Jalur Distribusi Donasi</a>
                         </li>
                     </ul>
                 </li>
@@ -185,7 +185,7 @@
                         <li>
                             <a href="/stok"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Data
-                                Finansial
+                                Donasi
                             </a>
                         </li>
                         <li>

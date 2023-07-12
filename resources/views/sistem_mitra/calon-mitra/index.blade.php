@@ -38,9 +38,11 @@
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-blue-900 ">
                     <tr>
+                        <th scope="col" class="px-6 py-3 border text-center">No.</th>
                         <th scope="col" class="px-6 py-3 border text-center">Nama Pondok</th>
                         <th scope="col" class="px-6 py-3 border text-center">Alamat</th>
-                        <th scope="col" class="px-6 py-3 border text-center">Pimpinan Pondok</th>
+                        <th scope="col" class="px-6 py-3 border text-center">Nama Pengasuh Pondok</th>
+                        <th scope="col" class="px-6 py-3 border text-center">Nomor Kontak Pengasuh Pondok</th>
                         <!-- Tambahkan kolom lainnya sesuai kebutuhan -->
                         <th scope="col" class="px-6 py-3 border text-center">Aksi</th>
                     </tr>
@@ -49,11 +51,15 @@
                     @foreach ($calonMitras as $calonMitra)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                             <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                {{ $loop->iteration }}</td>
+                            <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $calonMitra->nama_pondok }}</td>
                             <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $calonMitra->alamat }}</td>
                             <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $calonMitra->nama_pimpinan }}</td>
+                                <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ $calonMitra->no_hp_pimpinan }}</td>
                             <!-- Tambahkan kolom lainnya sesuai kebutuhan -->
                             <td class="text-center">
                                 <a href="{{ route('calon-mitra.show', $calonMitra) }}"

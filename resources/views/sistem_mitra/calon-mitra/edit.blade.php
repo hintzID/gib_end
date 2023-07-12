@@ -145,16 +145,7 @@
                     @enderror
                 </div>
 
-                <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="jumlah_piatu">Jumlah Piatu:</label>
-                    <input type="number" name="jumlah_piatu" id="jumlah_piatu"
-                        value="{{ $calonMitra->jumlah_piatu }}"
-                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        required>
-                    @error('jumlah_piatu')
-                        <span>{{ $message }}</span>
-                    @enderror
-                </div>
+
 
                 <div class="mt-5">
                     <label class="font-bold dark:text-white" for="jumlah_mustahiq">Jumlah Mustahiq:</label>
@@ -162,6 +153,17 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                     @error('jumlah_mustahiq')
+                        <span>{{ $message }}</span>
+                    @enderror
+                </div>
+
+                <div class="mt-5">
+                    <label class="font-bold dark:text-white" for="jumlah_piatu">Jumlah Santri Berprestasi:</label>
+                    <input type="number" name="jumlah_piatu" id="jumlah_piatu"
+                        value="{{ $calonMitra->jumlah_piatu }}"
+                        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                        required>
+                    @error('jumlah_piatu')
                         <span>{{ $message }}</span>
                     @enderror
                 </div>
@@ -308,11 +310,11 @@
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                         <option value="">Pilih grade</option>
-                        <option value="A" {{ $calonMitra->prioritas === 'A' ? 'selected' : '' }}>A</option>
-                        <option value="B" {{ $calonMitra->prioritas === 'B' ? 'selected' : '' }}>B</option>
-                        <option value="C" {{ $calonMitra->prioritas === 'C' ? 'selected' : '' }}>C</option>
-                        <option value="D" {{ $calonMitra->prioritas === 'D' ? 'selected' : '' }}>D</option>
-                        <option value="E" {{ $calonMitra->prioritas === 'E' ? 'selected' : '' }}>E</option>
+                        <option value="A" {{ $calonMitra->prioritas === 'A' ? 'selected' : '' }}>Siasah</option>
+                        <option value="B" {{ $calonMitra->prioritas === 'B' ? 'selected' : '' }}>Strategis</option>
+                        <option value="C" {{ $calonMitra->prioritas === 'C' ? 'selected' : '' }}>Distribusi</option>
+                        {{-- <option value="D" {{ $calonMitra->prioritas === 'D' ? 'selected' : '' }}>D</option> --}}
+                        <option value="E" {{ $calonMitra->prioritas === 'E' ? 'selected' : '' }} hidden>Tidak Ada</option>
                     </select>
                     @error('prioritas')
                         <span>{{ $message }}</span>
@@ -324,26 +326,31 @@
 
                     tingkatLayak.addEventListener('change', function() {
                         if (tingkatLayak.value === 'Layak') {
-                            prioritas.options[0].selected = true;
+                            prioritas.value = 'A';
                             prioritas.options[0].hidden = false;
                             prioritas.options[1].hidden = false;
                             prioritas.options[2].hidden = false;
                             prioritas.options[3].hidden = false;
-                            prioritas.options[4].hidden = false;
-                            prioritas.options[5].hidden = true;
+                            prioritas.options[4].hidden = true;
                         } else if (tingkatLayak.value === 'Tidak Layak') {
-                            prioritas.options[5].selected = true;
+                            prioritas.value = 'E';
+                            prioritas.options[0].hidden = true;
+                            prioritas.options[1].hidden = true;
+                            prioritas.options[2].hidden = true;
+                            prioritas.options[3].hidden = true;
+                            prioritas.options[4].hidden = false;
+                        }
+                        else if (tingkatLayak.value === '') {
+                            prioritas.value = '';
                             prioritas.options[0].hidden = true;
                             prioritas.options[1].hidden = true;
                             prioritas.options[2].hidden = true;
                             prioritas.options[3].hidden = true;
                             prioritas.options[4].hidden = true;
                         }
-                        else if (tingkatLayak.value === '') {
-                            prioritas.option.hidden = true;
-                        }
                     });
                 </script>
+
 
             <div class="mt-3">
                 <button type="submit"
