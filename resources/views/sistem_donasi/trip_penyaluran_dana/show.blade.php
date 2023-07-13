@@ -12,24 +12,23 @@
                 </div>
             </div>
         </div>
-<form class="border rounded-lg dark:border-blue-900">
-        <div class="mb-3 ml-3 mt-2 dark:text-white">
-            <strong>Urutan Trip:</strong>
-            {{ $tripPenyaluranDana->urutan_trip }}
+        <form class="border rounded-lg dark:border-blue-900">
+            <div class="mb-3 ml-3 m-3 dark:text-white">
+                <strong>Trip:</strong>
+                {{ $tripPenyaluranDana->daftarTrip->nama_trip }}
+            </div>
+            <div class="mb-3 ml-3 m-3 mt-2 dark:text-white">
+                <strong>Urutan Trip:</strong>
+                {{ $tripPenyaluranDana->urutan_trip }}
+            </div>
+            <div class="mb-3 ml-3 m-3 dark:text-white">
+                <strong>Pondok:</strong>
+                {{ $tripPenyaluranDana->pondok->calonMitra->nama_pondok }}
+            </div>
+        </form>
+        <div class="pull-right mt-3">
+            <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600"
+                href="{{ route('trip-penyaluran-dana.index') }}">Kembali</a>
         </div>
-
-        <div class="mb-3 ml-3 dark:text-white">
-            <strong>Trip:</strong>
-            {{ $tripPenyaluranDana->daftarTrip->nama_trip }}
-        </div>
-
-        <div class="mb-3 ml-3 dark:text-white">
-            <strong>Pondok:</strong>
-            {{ $tripPenyaluranDana->pondok->calonMitra->nama_pondok }}
-        </div>
-    </form>
-    <div class="pull-right mt-3">
-        <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600" href="{{ route('trip-penyaluran-dana.index') }}">Kembali</a>
-    </div>
     </div>
 @endsection

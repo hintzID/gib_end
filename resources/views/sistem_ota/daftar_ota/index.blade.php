@@ -44,7 +44,7 @@
                     </div>
                     <input type="search" name="search" id="default-search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Cari anggota..." value="" required>
+                        placeholder="Cari Nama OTA..." value="" required>
                     <button type="submit"
                         class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 shadow-lg focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cari</button>
                 </div>
@@ -55,33 +55,33 @@
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-blue-900 ">
                     <tr>
-                        <th scope="col" class="px-6 py-3">No</th>
-                        <th scope="col" class="px-6 py-3">Nama</th>
-                        <th scope="col" class="px-6 py-3">Jenis Kelamin</th>
-                        <th scope="col" class="px-6 py-3">Pekerjaan</th>
-                        <th scope="col" class="px-6 py-3">Alamat</th>
-                        <th scope="col" class="px-6 py-3">Nomor HP</th>
-                        <th scope="col" class="px-6 py-3" title="Fundraiser">FR</th>
-                        <th scope="col" class="px-6 py-3">Aksi</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="No Urut">No</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Nama OTA">Nama</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Gender OTA">Jenis Kelamin</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Jenis Pekerjaan OTA">Pekerjaan</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Alamat OTA">Alamat</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Nomor Handphone OTA">Nomor HP</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Fundraiser">FR</th>
+                        <th scope="col" class="px-6 py-3 text-center" title="Aksi">Aksi</th>
                     </tr>
                 </thead>
                 @foreach ($daftarOtas as $key => $daftarOta)
                     <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $key + 1 }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->nama }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->jenis_kelamin }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->pekerjaan }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->alamat }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->nomor_hp }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ $daftarOta->anggota->verifikasiCalonAnggota->calonAnggota->nama_lengkap }}</td>
-                        <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             <form action="{{ route('daftar-ota.destroy', $daftarOta->id) }}" method="POST">
                                 <a class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-teal-500 text-white hover:bg-teal-600"
                                     href="{{ route('daftar-ota.show', $daftarOta->id) }}">Detail</a>

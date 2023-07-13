@@ -35,10 +35,11 @@
                 <label for="search" class="mr-2">Tahun:</label>
                 <select name="search" id="search" class="border border-gray-300 rounded-lg p-2">
                     <option value="">All</option>
-                    @for ($year = date('Y'); $year >= 2022; $year--)
-                        <option value="{{ $year }}">{{ $year }}</option>
+                    @for ($year = date('Y'); $year >= 2020; $year--)
+                        <option value="{{ $year }}" {{ $year == $search ? 'selected' : '' }}>{{ $year }}</option>
                     @endfor
                 </select>
+
                 <button type="submit"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 ml-2 inline-flex items-center">
                     Filter

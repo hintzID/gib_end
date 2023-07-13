@@ -19,16 +19,16 @@ class AnggotaController extends Controller
                 });
             })
             ->paginate(10);
-        
+
         return view('sistem_anggota.anggota.index', compact('anggota', 'keyword'));
     }
-    
+
 
     public function create()
-    {   
+    {
         $anggota = Anggota::all();
         $verifikasiCalonAnggota = VerifikasiCalonAnggota::doesntHave('anggota')->get();
-        return view('sistem_anggota.anggota.create', compact('verifikasiCalonAnggota','anggota'));    
+        return view('sistem_anggota.anggota.create', compact('verifikasiCalonAnggota','anggota'));
     }
 
     public function store(Request $request)
@@ -36,7 +36,7 @@ class AnggotaController extends Controller
         $data = $request->only([
             'verifikasi_calon_anggota_id',
         ]);
-    
+
         try {
             Anggota::create($data);
             return redirect()->route('anggota.index')
@@ -46,17 +46,17 @@ class AnggotaController extends Controller
                 ->with('warning', 'Anggota gagal ditambahkan. Data mungkin duplikat atau tidak ada');
         }
     }
-    
+
     public function show($id)
     {
         $anggota = Anggota::findOrFail($id);
         $anggota->load('verifikasiCalonAnggota.calonAnggota');
-    
+
         return view('sistem_anggota.anggota.show', compact('anggota'));
-    }    
+    }
 
     public function edit($id)
-    {       
+    {
         $calonAnggota = CalonAnggota::findOrFail($id);
         return view('sistem_anggota.anggota.edit', compact('calonAnggota'));
     }
@@ -73,7 +73,7 @@ class AnggotaController extends Controller
             'status',
             'pekerjaan',
             'no_hp',
-            // 'organisasi_diikuti',
+            'pilihan_kontribusi',
             // 'tentang_paskas',
             // 'pilar_paskas',
             // 'doa_harapan',
@@ -84,15 +84,15 @@ class AnggotaController extends Controller
 
         return redirect()->route('anggota.index')->with('success', 'Anggota berhasil diperbarui.');
     }
-    
-    
+
+
 
     public function destroy($id)
     {
         $anggota = Anggota::findOrFail($id);
         $anggota->delete();
-    
+
         return redirect()->route('anggota.index')
             ->with('success', 'Anggota berhasil dihapus.');
     }
-}   
+}

@@ -44,7 +44,7 @@
                     </div>
                     <input type="search" name="keyword" id="default-search"
                         class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder="Cari anggota..." value="{{ $keyword }}" required>
+                        placeholder="Cari Nama Calon Anggota..." value="{{ $keyword }}" required>
                     <button type="submit"
                         class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cari</button>
                 </div>
@@ -55,25 +55,25 @@
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-blue-900 ">
                     <tr>
-                        <th scope="col" class="px-6 py-3">No.</th>
-                        <th scope="col" class="px-6 py-3">Nama Anggota</th>
-                        <th scope="col" class="px-6 py-3">Verifikasi</th>
-                        <th scope="col" class="px-6 py-3">Catatan</th>
-                        <th scope="col" class="px-6 py-3">Aksi</th>
+                        <th scope="col" class="px-6 py-3 text-center">No.</th>
+                        <th scope="col" class="px-6 py-3 text-center">Nama Calon Anggota</th>
+                        <th scope="col" class="px-6 py-3 text-center">Verifikasi</th>
+                        <th scope="col" class="px-6 py-3 text-center">Catatan</th>
+                        <th scope="col" class="px-6 py-3 text-center">Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($verifikasiAnggota as $verifikasi)
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 text-center py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $loop->iteration }}</td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 text-center py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $verifikasi->calonAnggota->nama_lengkap }}</td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 text-center py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $verifikasi->verifikasi ? 'Terverifikasi' : 'Belum Terverifikasi' }}</td>
-                            <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                            <td class="px-6 text-center py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $verifikasi->catatan }}</td>
-                            <td class="">
+                            <td class="px-6 text-center py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 <a href="{{ route('verifikasi-calon-anggota.show', $verifikasi->id) }}"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-teal-500 text-white hover:bg-teal-600"><i
                                     class="bi bi-eye"></i>&nbsp; Lihat</a>

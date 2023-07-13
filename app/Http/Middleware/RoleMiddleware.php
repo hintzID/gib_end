@@ -6,10 +6,11 @@ use Closure;
 
 class RoleMiddleware
 {
-    public function handle($request, Closure $next, $role)
+    public function handle($request, Closure $next, ...$roles)
     {
         // Perform your role-based authorization logic here
-        if ($request->user()->peran->peran === $role) {
+        $userRole = $request->user()->peran->peran;
+        if (in_array($userRole, $roles)) {
             return $next($request);
         }
 
