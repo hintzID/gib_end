@@ -230,32 +230,13 @@
                     readonly>
             </div>
 
-            <div class="mb-3">
-                <label class="font-bold" for="prioritas">Grade:</label>
-                @php
-                $alias = '';
-                switch ($calonMitra->prioritas) {
-                    case 'A':
-                        $alias = 'Siasah';
-                        break;
-                    case 'B':
-                        $alias = 'Strategis';
-                        break;
-                    case 'C':
-                        $alias = 'Distribusi';
-                        break;
-                    case 'E':
-                        $alias = 'Tidak Ada';
-                        break;
-                    default:
-                        $alias = 'Alias Default';
-                }
-                @endphp
+            <div class="mb-3" class="mt-5">
+                <label class="font-bold dark:text-white" for="prioritas_id">Grade:</label>
                 <input type="text"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    name="prioritas" id="prioritas" value="{{ $alias }}"
-                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
-                    readonly>
+                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                name="prioritas_id" id="prioritas_id" value="{{ $calonMitra->prioritas->grade }}"
+                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                readonly>
             </div>
 
             <a href="{{ route('calon-mitra.index') }}"

@@ -55,20 +55,26 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
                                 {{ $item->keterangan }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-center">
-                                <a href="{{ route('peran.show', $item->id) }}"
+                                {{-- <a href="{{ route('peran.show', $item->id) }}"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-teal-500 text-white hover:bg-teal-600"><i
-                                        class="bi bi-eye"></i>&nbsp; Lihat</a>
+                                        class="bi bi-eye"></i>&nbsp; Lihat</a> --}}
                                 <a href="{{ route('peran.edit', $item->id) }}"
                                     class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-orange-400 text-black hover:bg-orange-500"><i
                                         class="bi bi-pencil-square"></i>&nbsp; Edit</a>
-                                <form action="{{ route('peran.destroy', $item->id) }}" method="POST" class="inline">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"
-                                        class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
-                                        onclick="return confirm('Apakah Anda yakin ingin menghapus peran ini?')"><i
-                                            class="bi bi-trash2"></i>&nbsp; Hapus</button>
-                                </form>
+                                        @if($item->peran !== 'admin')
+                                        <form action="{{ route('peran.destroy', $item->id) }}" method="POST" class="inline">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit"
+                                                class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-600 text-white hover:bg-red-700"
+                                                onclick="return confirm('Apakah Anda yakin ingin menghapus peran ini?')"><i
+                                                    class="bi bi-trash2"></i>&nbsp; Hapus</button>
+                                        </form>
+                                    @else
+                                        <button type="button"
+                                            class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-red-300 text-gray-500 cursor-not-allowed"
+                                            disabled><i class="bi bi-trash2"></i>&nbsp; Hapus</button>
+                                    @endif
                             </td>
                         </tr>
                     @endforeach

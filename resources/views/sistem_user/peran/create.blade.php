@@ -12,12 +12,16 @@
         <form action="{{ route('peran.store') }}" method="POST">
             @csrf
 
+
             <div class="mb-4">
                 <label for="peran">Peran</label>
-                <input type="text" name="peran"
-                    class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
-                    required>
+                <select name="peran" class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" required>
+                    <option value="komandan">Komandan</option>
+                    <option value="admin" @if(\App\Models\Peran::where('peran', 'admin')->exists()) hidden @endif>Admin</option>
+                </select>
             </div>
+
+
 
             <div class="mb-4">
                 <label for="keterangan">Keterangan</label>

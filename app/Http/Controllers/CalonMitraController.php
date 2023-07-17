@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pondok;
 use App\Models\CalonMitra;
+use App\Models\Prioritas;
 use Illuminate\Http\Request;
 
 class CalonMitraController extends Controller
@@ -36,8 +36,8 @@ class CalonMitraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('sistem_mitra.calon-mitra.create');
+    {   $prioritas = Prioritas::all();
+        return view('sistem_mitra.calon-mitra.create', compact('prioritas'));
     }
 
     /**
@@ -74,7 +74,7 @@ class CalonMitraController extends Controller
             'keterangan_fasilitas' => 'nullable',
             'sumber_air' => 'required',
             'tingkat_layak' => 'required',
-            'prioritas' => 'required',
+            'prioritas_id' => 'required',
         ]);
 
         CalonMitra::create($validatedData);
@@ -89,14 +89,15 @@ class CalonMitraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(CalonMitra $calonMitra)
-    {
+    {   
         return view('sistem_mitra.calon-mitra.show', compact('calonMitra'));
     }
 
 
     public function edit(CalonMitra $calonMitra)
     {
-        return view('sistem_mitra.calon-mitra.edit', compact('calonMitra'));
+        $prioritas = Prioritas::all();
+        return view('sistem_mitra.calon-mitra.edit', compact('calonMitra','prioritas'));
     }
 
 
@@ -128,7 +129,7 @@ class CalonMitraController extends Controller
             'keterangan_fasilitas' => 'nullable',
             'sumber_air' => 'required',
             'tingkat_layak' => 'required',
-            'prioritas' => 'required',
+            'prioritas_id' => 'required',
         ]);
 
         $calonMitra->update($validatedData);

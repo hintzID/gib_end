@@ -264,6 +264,26 @@
 
                 <div class="mt-5">
                     <label class="font-bold dark:text-white" for="keterangan_fasilitas">Keterangan Fasilitas:</label>
+                    <div>
+                        <input type="checkbox" id="chkMasjid" value="Masjid" onchange="updateKeterangan()">
+                        <label for="chkMasjid">Masjid</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkMCK" value="MCK" onchange="updateKeterangan()">
+                        <label for="chkMCK">MCK</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkDapur" value="Dapur" onchange="updateKeterangan()">
+                        <label for="chkDapur">Dapur</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkRuangKelas" value="Ruang Kelas" onchange="updateKeterangan()">
+                        <label for="chkRuangKelas">Ruang Kelas</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="chkAula" value="Aula" onchange="updateKeterangan()">
+                        <label for="chkAula">Aula</label>
+                    </div>
                     <textarea name="keterangan_fasilitas" id="keterangan_fasilitas" rows="3"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Ditulis dengan format, nama_fasilitas(jumlah, kondisi); contoh : masjid(1, baik), kulkas(2, rusak)">{{ old('keterangan_fasilitas') }}</textarea>
@@ -271,6 +291,23 @@
                         <span>{{ $message }}</span>
                     @enderror
                 </div>
+
+                <script>
+                    function updateKeterangan() {
+                        var checkboxes = document.querySelectorAll('input[type=checkbox]');
+                        var keteranganTextarea = document.getElementById('keterangan_fasilitas');
+                        var keterangan = "";
+
+                        checkboxes.forEach(function(checkbox) {
+                            if (checkbox.checked) {
+                                keterangan += checkbox.value + "(1, baik); "; // Anda dapat mengubah format sesuai kebutuhan
+                            }
+                        });
+
+                        keteranganTextarea.value = keterangan.trim();
+                    }
+                </script>
+
 
                 <div class="mt-5">
                     <label class="font-bold dark:text-white" for="sumber_air">Sumber Air:</label>
@@ -304,49 +341,19 @@
                 </div>
 
                 <div class="mb-3" class="mt-5">
-                    <label class="font-bold dark:text-white" for="prioritas">Grade:</label>
-                    <select name="prioritas" id="prioritas"
+                    <label class="font-bold dark:text-white" for="prioritas_id">Grade:</label>
+                    <select name="prioritas_id" id="prioritas_id"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                         <option value="">Pilih grade</option>
-                        <option value="A">Siasah</option>
-                        <option value="B">Strategis</option>
-                        <option value="C">Distribusi</option>
-                        {{-- <option value="D">D</option> --}}
-                        <option value="E">Tidak ada</option>
+                        @foreach($prioritas as $item)
+                            <option value="{{ $item->id }}">{{ $item->grade }}</option>
+                        @endforeach
                     </select>
-                    @error('prioritas')
+                    @error('prioritas_id')
                         <span>{{ $message }}</span>
                     @enderror
                 </div>
-
-                <script>
-                    const tingkatLayak = document.getElementById('tingkat_layak');
-                    const prioritas = document.getElementById('prioritas');
-
-                    tingkatLayak.addEventListener('change', function() {
-                        if (tingkatLayak.value === 'Layak') {
-                            prioritas.options[0].selected = true;
-                            prioritas.options[0].hidden = false;
-                            prioritas.options[1].hidden = false;
-                            prioritas.options[2].hidden = false;
-                            prioritas.options[3].hidden = false;
-                            // prioritas.options[4].hidden = false;
-                            prioritas.options[4].hidden = true;
-                        } else if (tingkatLayak.value === 'Tidak Layak') {
-                            prioritas.options[4].selected = true;
-                            prioritas.options[0].hidden = true;
-                            prioritas.options[1].hidden = true;
-                            prioritas.options[2].hidden = true;
-                            prioritas.options[3].hidden = true;
-                            // prioritas.options[4].hidden = true;
-                        } else if (tingkatLayak.value === '') {
-                            prioritas.option.hidden = true;
-                        }
-                    });
-                </script>
-
-
 
                 <button type="submit"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-blue text-gray-800 border border-gray-200 rounded inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline bg-blue-600 text-white hover:bg-blue-600">Simpan</button>

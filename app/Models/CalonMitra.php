@@ -36,12 +36,17 @@ class CalonMitra extends Model
         'keterangan_fasilitas',
         'sumber_air',
         'tingkat_layak',
-        'prioritas',
+        'prioritas_id',
     ];
 
     public function pondok()
     {
         return $this->hasOne(Pondok::class);
+    }
+
+    public function prioritas()
+    {
+        return $this->belongsTo(Prioritas::class);
     }
 
 }

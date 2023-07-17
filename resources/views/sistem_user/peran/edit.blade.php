@@ -10,9 +10,12 @@
         @csrf
         @method('PUT')
         <div class="mb-4">
-          <label for="peran" class="block text-white font-semibold">Peran</label>
-          <input type="text" name="peran" class="block w-full py-2 px-4 mb-2 text-base leading-normal bg-white text-gray-800 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" value="{{ $peran->peran }}" required>
+            <label for="peran">Peran</label>
+            <input type="text" name="peran" value="{{ $peran->peran }}" readonly
+                class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded" required>
         </div>
+
+
         <div class="mb-4">
           <label for="keterangan" class="block text-white font-semibold">Keterangan</label>
           <input type="text" name="keterangan" class="block w-full py-2 px-4 mb-2 text-base leading-normal bg-white text-gray-800 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500" value="{{ $peran->keterangan }}">

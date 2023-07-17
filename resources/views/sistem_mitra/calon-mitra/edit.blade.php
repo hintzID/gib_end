@@ -304,52 +304,20 @@
                     @enderror
                 </div>
 
-                <div class="mt-5">
-                    <label class="font-bold dark:text-white" for="prioritas">Grade:</label>
-                    <select name="prioritas" id="prioritas"
+                <div class="mb-3" class="mt-5">
+                    <label class="font-bold dark:text-white" for="prioritas_id">Grade:</label>
+                    <select name="prioritas_id" id="prioritas_id"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         required>
                         <option value="">Pilih grade</option>
-                        <option value="A" {{ $calonMitra->prioritas === 'A' ? 'selected' : '' }}>Siasah</option>
-                        <option value="B" {{ $calonMitra->prioritas === 'B' ? 'selected' : '' }}>Strategis</option>
-                        <option value="C" {{ $calonMitra->prioritas === 'C' ? 'selected' : '' }}>Distribusi</option>
-                        {{-- <option value="D" {{ $calonMitra->prioritas === 'D' ? 'selected' : '' }}>D</option> --}}
-                        <option value="E" {{ $calonMitra->prioritas === 'E' ? 'selected' : '' }} hidden>Tidak Ada</option>
+                        @foreach($prioritas as $item)
+                        <option value="{{ $item->id }}" @if($item->id == $calonMitra->prioritas_id) selected @endif>{{ $item->grade }}</option>
+                        @endforeach
                     </select>
-                    @error('prioritas')
+                    @error('prioritas_id')
                         <span>{{ $message }}</span>
                     @enderror
                 </div>
-                <script>
-                    const tingkatLayak = document.getElementById('tingkat_layak');
-                    const prioritas = document.getElementById('prioritas');
-
-                    tingkatLayak.addEventListener('change', function() {
-                        if (tingkatLayak.value === 'Layak') {
-                            prioritas.value = 'A';
-                            prioritas.options[0].hidden = false;
-                            prioritas.options[1].hidden = false;
-                            prioritas.options[2].hidden = false;
-                            prioritas.options[3].hidden = false;
-                            prioritas.options[4].hidden = true;
-                        } else if (tingkatLayak.value === 'Tidak Layak') {
-                            prioritas.value = 'E';
-                            prioritas.options[0].hidden = true;
-                            prioritas.options[1].hidden = true;
-                            prioritas.options[2].hidden = true;
-                            prioritas.options[3].hidden = true;
-                            prioritas.options[4].hidden = false;
-                        }
-                        else if (tingkatLayak.value === '') {
-                            prioritas.value = '';
-                            prioritas.options[0].hidden = true;
-                            prioritas.options[1].hidden = true;
-                            prioritas.options[2].hidden = true;
-                            prioritas.options[3].hidden = true;
-                            prioritas.options[4].hidden = true;
-                        }
-                    });
-                </script>
 
 
             <div class="mt-3">

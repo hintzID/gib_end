@@ -15,6 +15,7 @@ use App\Http\Controllers\TripPenyaluranDanaController;
 use App\Http\Controllers\DaftarOtaController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\StokController;
+use App\Http\Controllers\PrioritasController;
 use App\Models\User;
 
 use App\Http\Controllers\HomeController;
@@ -55,6 +56,7 @@ Route::middleware(['role:admin,komandan'])->group(function () {
     Route::resource('user', User2Controller::class);
 
     // Pengaturan pondok mitra
+    Route::resource('prioritas', PrioritasController::class);
     Route::resource('calon-mitra', CalonMitraController::class);
     Route::resource('pondok', PondokController::class);
     Route::resource('daftar_trip', DaftarTripController::class);

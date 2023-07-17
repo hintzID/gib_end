@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('calon_mitra', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('prioritas_id');
             $table->string('nama_pondok');
             $table->string('alamat');
             $table->date('tanggal_berdiri');
@@ -38,8 +39,10 @@ return new class extends Migration
             $table->text('keterangan_fasilitas')->nullable();
             $table->string('sumber_air');
             $table->string('tingkat_layak');
-            $table->string('prioritas');
+
             $table->timestamps();
+
+            $table->foreign('prioritas_id')->references('id')->on('prioritas')->onDelete('cascade');
         });
     }
 

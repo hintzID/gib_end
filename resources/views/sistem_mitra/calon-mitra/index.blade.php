@@ -38,13 +38,16 @@
             <table class="w-full text-sm text-left text-gray-500 ">
                 <thead class="text-xs text-white uppercase bg-blue-500 dark:bg-blue-900 ">
                     <tr>
-                        <th scope="col" class="px-6 py-3 border text-center">No.</th>
-                        <th scope="col" class="px-6 py-3 border text-center">Nama Pondok</th>
+                        <th scope="col" class="px-6 py-3 border text-center" rowspan="2">No.</th>
+                        <th scope="col" class="px-6 py-3 border text-center" colspan="2">Pondok</th>
+                        <th scope="col" class="px-6 py-3 border text-center" colspan="2">Pengasuh Pondok</th>
+                        <th scope="col" class="px-6 py-3 border text-center" rowspan="2">Aksi</th>
+                    </tr>
+                    <tr>
+                        <th scope="col" class="px-6 py-3 border text-center">Nama</th>
                         <th scope="col" class="px-6 py-3 border text-center">Alamat</th>
-                        <th scope="col" class="px-6 py-3 border text-center">Nama Pengasuh Pondok</th>
-                        <th scope="col" class="px-6 py-3 border text-center">Nomor Kontak Pengasuh Pondok</th>
-                        <!-- Tambahkan kolom lainnya sesuai kebutuhan -->
-                        <th scope="col" class="px-6 py-3 border text-center">Aksi</th>
+                        <th scope="col" class="px-6 py-3 border text-center">Nama</th>
+                        <th scope="col" class="px-6 py-3 border text-center">Nomor Kontak</th>
                     </tr>
                 </thead>
                 <tbody>

@@ -140,6 +140,10 @@
                     </button>
                     <ul id="dropdown-example-calon-mitra" class="hidden py-2 space-y-2">
                         <li>
+                            <a href="/prioritas"
+                                class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Daftar Grade</a>
+                        </li>
+                        <li>
                             <a href="/calon-mitra"
                                 class="flex items-center w-full p-2 text-gray-900 transition duration-75 rounded-lg pl-11 group hover:bg-blue-300 dark:text-white dark:hover:bg-gray-700 hover:shadow-2xl">Calon
                                 Mitra</a>
