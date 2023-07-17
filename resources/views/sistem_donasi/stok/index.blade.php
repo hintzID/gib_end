@@ -32,7 +32,7 @@
 
         <form action="{{ route('stok.index') }}" method="GET" class="mb-5">
             <div class="flex items-center">
-                <label for="search" class="mr-2">Tahun:</label>
+                <label for="search" class="mr-2 dark:text-white">Tahun:</label>
                 <select name="search" id="search" class="border border-gray-300 rounded-lg p-2">
                     <option value="">All</option>
                     @for ($year = date('Y'); $year >= 2020; $year--)
@@ -44,10 +44,6 @@
                 <button type="submit"
                     class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2.5 ml-2 inline-flex items-center">
                     Filter
-                    <svg class="w-4 h-4 ml-2" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
-                    </svg>
                 </button>
             </div>
         </form>
@@ -97,7 +93,6 @@
                                 $previousPrice3 = ($stok[$key - 1]->dana_masuk * 0.9) / $stok[$key - 1]->harga_beras;
                                 $reduction3 = round(((($item->dana_masuk * 0.9) / $item->harga_beras - $previousPrice3) / $previousPrice3) * 100, 2);
 
-                                echo $previousPrice3;
                             @endphp
                         @else
                             @php
@@ -188,20 +183,20 @@
                         <td class="px-6 py-4 drop-shadow-lg text-red-700 font-extrabold" colspan="2">Total <p
                                 class="text-green-700">Rata-rata</p>
                         </td>
-                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white dark:bg-red-700">
                             Rp.{{ number_format($stok->sum('dana_masuk'), 0, ',', '.') }}</td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ '-' }}
                         </td>
-                        <td class="px-6 py-4 font-medium text-green-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-green-700 whitespace-nowrap dark:text-white dark:bg-green-700">
                             Rp.{{ number_format($stok->avg('harga_beras'), 0, ',', '.') }}
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                             {{ '-' }}
                         </td>
-                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white dark:bg-red-700">
                             Rp.{{ number_format($stok->sum('dana_masuk') * 0.1, 0, ',', '.') }}</td>
-                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white dark:bg-red-700">
                             {{ number_format(
                                 $stok->sum(function ($item) {
                                     return ($item->dana_masuk * 0.9) / $item->harga_beras;
@@ -212,7 +207,7 @@
                             ) }}
                             KG
                         </td>
-                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white">
+                        <td class="px-6 py-4 font-medium text-red-700 whitespace-nowrap dark:text-white dark:bg-red-700">
                             {{ number_format(
                                 $stok->sum(function ($item) {
                                     return ($item->dana_masuk * 0.9) / $item->harga_beras / 20;

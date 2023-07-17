@@ -14,7 +14,7 @@
         </div>
 
         @if ($errors->any())
-            <div class="relative px-3 py-3 mb-4 border rounded bg-red-200 border-red-300 text-red-800">
+            <div class="relative px-3 py-3 mb-4 dark:text-white border rounded bg-red-200 border-red-300 text-red-800">
                 <strong>Error!</strong> Terdapat masalah dengan inputan Anda. Silakan periksa kembali.<br><br>
                 <ul>
                  @foreach ($errors->all() as $error)
@@ -30,7 +30,7 @@
 
             <div class="flex flex-wrap ">
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>Nama:</strong>
                         <input type="text" name="nama" value="{{ $daftarOta->nama }}"
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -38,7 +38,7 @@
                     </div>
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>Jenis Kelamin:</strong>
                         <input type="text" name="jenis_kelamin" value="{{ $daftarOta->jenis_kelamin }}"
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -46,7 +46,7 @@
                     </div>
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>Pekerjaan:</strong>
                         <input type="text" name="pekerjaan" value="{{ $daftarOta->pekerjaan }}"
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>Alamat:</strong>
                         <textarea
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -62,7 +62,7 @@
                     </div>
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>Nomor HP:</strong>
                         <input type="text" name="nomor_hp" value="{{ $daftarOta->nomor_hp }}"
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="mb-3 md:w-full pr-4 pl-4">
-                    <div class="mb-4">
+                    <div class="mb-4 dark:text-white">
                         <strong>FR:</strong>
                         <select
                             class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"

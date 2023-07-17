@@ -23,7 +23,7 @@
 
 <form action="{{ route('home') }}" method="GET" class="mb-5 px-4">
     <div class="flex items-center">
-        <label for="search" class="mr-2">Tahun:</label>
+        <label for="search" class="mr-2 dark:text-white">Tahun:</label>
         <select name="search" id="search" class="border border-gray-300 rounded-lg p-2">
             <option value="">Terbaru</option>
             @for ($year = date('Y'); $year >= 2020; $year--)

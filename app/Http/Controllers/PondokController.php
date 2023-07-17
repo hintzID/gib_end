@@ -50,6 +50,7 @@ class PondokController extends Controller
             'calon_mitra_id' => 'required',
             'contact_person' => 'required',
             'no_hp_contact_person' => 'required',
+            'keterangan' => 'nullable',
         ]);
 
         Pondok::create($data);
@@ -94,6 +95,7 @@ class PondokController extends Controller
             'calon_mitra_id' => 'required',
             'contact_person' => 'required',
             'no_hp_contact_person' => 'required',
+            'keterangan' => 'nullable',
         ]);
 
         $pondok->update($data);

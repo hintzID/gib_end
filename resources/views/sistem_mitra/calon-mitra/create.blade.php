@@ -266,24 +266,25 @@
                     <label class="font-bold dark:text-white" for="keterangan_fasilitas">Keterangan Fasilitas:</label>
                     <div>
                         <input type="checkbox" id="chkMasjid" value="Masjid" onchange="updateKeterangan()">
-                        <label for="chkMasjid">Masjid</label>
+                        <label class="dark:text-white" for="chkMasjid">Masjid</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkMCK" value="MCK" onchange="updateKeterangan()">
-                        <label for="chkMCK">MCK</label>
+                        <label class="dark:text-white" for="chkMCK">MCK</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkDapur" value="Dapur" onchange="updateKeterangan()">
-                        <label for="chkDapur">Dapur</label>
+                        <label class="dark:text-white" for="chkDapur">Dapur</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkRuangKelas" value="Ruang Kelas" onchange="updateKeterangan()">
-                        <label for="chkRuangKelas">Ruang Kelas</label>
+                        <label class="dark:text-white" for="chkRuangKelas">Ruang Kelas</label>
                     </div>
                     <div>
                         <input type="checkbox" id="chkAula" value="Aula" onchange="updateKeterangan()">
-                        <label for="chkAula">Aula</label>
+                        <label class="dark:text-white" for="chkAula">Aula</label>
                     </div>
+                    <br>
                     <textarea name="keterangan_fasilitas" id="keterangan_fasilitas" rows="3"
                         class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                         placeholder="Ditulis dengan format, nama_fasilitas(jumlah, kondisi); contoh : masjid(1, baik), kulkas(2, rusak)">{{ old('keterangan_fasilitas') }}</textarea>

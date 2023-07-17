@@ -82,75 +82,34 @@
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $trip->pondok->calonMitra->alamat }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $trip->pondok->calonMitra->prioritas }}</td>
+                                {{ $trip->pondok->calonMitra->prioritas->grade }}</td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                @if ($trip->pondok->calonMitra->prioritas == 'A')
-                                    100%
-                                @elseif ($trip->pondok->calonMitra->prioritas == 'B')
-                                    75%
-                                @elseif ($trip->pondok->calonMitra->prioritas == 'C')
-                                    50%
-                                @elseif ($trip->pondok->calonMitra->prioritas == 'D')
-                                    25%
-                                @endif
+                                {{$trip->pondok->calonMitra->prioritas->persen}}%
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ $trip->pondok->calonMitra->jumlah_tk +
+                                {{  $trip->pondok->calonMitra->jumlah_tk +
                                     $trip->pondok->calonMitra->jumlah_sd +
                                     $trip->pondok->calonMitra->jumlah_smp +
                                     $trip->pondok->calonMitra->jumlah_sma +
-                                    $trip->pondok->calonMitra->jumlah_kuliah }}
+                                    $trip->pondok->calonMitra->jumlah_kuliah +
+                                    $trip->pondok->calonMitra->jumlah_pengurus_menetap }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                @php
-                                    $prioritas = $trip->pondok->calonMitra->prioritas;
-                                    $nilaiPrioritas = 0;
-
-                                    switch ($prioritas) {
-                                        case 'A':
-                                            $nilaiPrioritas = 1;
-                                            break;
-                                        case 'B':
-                                            $nilaiPrioritas = 0.75;
-                                            break;
-                                        case 'C':
-                                            $nilaiPrioritas = 0.5;
-                                            break;
-                                        case 'D':
-                                            $nilaiPrioritas = 0.25;
-                                            break;
-                                    }
-
-                                    $totalNilai = ($trip->pondok->calonMitra->jumlah_tk + $trip->pondok->calonMitra->jumlah_sd + $trip->pondok->calonMitra->jumlah_smp + $trip->pondok->calonMitra->jumlah_sma + $trip->pondok->calonMitra->jumlah_kuliah) * 7 * $nilaiPrioritas;
-                                @endphp
-
-                                {{ $totalNilai }}
+                                {{ ($trip->pondok->calonMitra->jumlah_tk +
+                                    $trip->pondok->calonMitra->jumlah_sd +
+                                    $trip->pondok->calonMitra->jumlah_smp +
+                                    $trip->pondok->calonMitra->jumlah_sma +
+                                    $trip->pondok->calonMitra->jumlah_kuliah +
+                                    $trip->pondok->calonMitra->jumlah_pengurus_menetap) * 7 * ($trip->pondok->calonMitra->prioritas->persen/100)}}
                             </td>
 
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                @php
-                                    $prioritas = $trip->pondok->calonMitra->prioritas;
-                                    $nilaiPrioritas = 0;
-
-                                    switch ($prioritas) {
-                                        case 'A':
-                                            $nilaiPrioritas = 1;
-                                            break;
-                                        case 'B':
-                                            $nilaiPrioritas = 0.75;
-                                            break;
-                                        case 'C':
-                                            $nilaiPrioritas = 0.5;
-                                            break;
-                                        case 'D':
-                                            $nilaiPrioritas = 0.25;
-                                            break;
-                                    }
-
-                                    $totalNilai = ($trip->pondok->calonMitra->jumlah_tk + $trip->pondok->calonMitra->jumlah_sd + $trip->pondok->calonMitra->jumlah_smp + $trip->pondok->calonMitra->jumlah_sma + $trip->pondok->calonMitra->jumlah_kuliah) * 7 * $nilaiPrioritas;
-                                @endphp
-
-                                {{ $totalNilai / 20 }}
+                                {{ (($trip->pondok->calonMitra->jumlah_tk +
+                                    $trip->pondok->calonMitra->jumlah_sd +
+                                    $trip->pondok->calonMitra->jumlah_smp +
+                                    $trip->pondok->calonMitra->jumlah_sma +
+                                    $trip->pondok->calonMitra->jumlah_kuliah +
+                                    $trip->pondok->calonMitra->jumlah_pengurus_menetap) * 7 * ($trip->pondok->calonMitra->prioritas->persen/100)) / 20  }}
                             </td>
                             <td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                                 {{ $trip->pondok->contact_person }}</td>

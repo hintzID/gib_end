@@ -5,8 +5,8 @@
 
 <body class="bg-gray-100">
     <div class="container mx-auto mt-6">
-        <h1 class="text-3xl font-bold">Selamat Datang, {{ $user->name }}</h1>
-        <p class="text-gray-500 mt-2">Informasi Pengguna<p>
+        <h1 class="text-3xl font-bold dark:text-white">Selamat Datang, {{ $user->name }}</h1>
+        <p class="text-gray-500 mt-2 dark:text-gray-100">Informasi Pengguna<p>
         <div class="flex items-center mt-4 space-x-4 bg-gray-200 p-5">
             <div class="w-24 h-24 rounded-full overflow-hidden m-4">
                 @if ($user->photo)

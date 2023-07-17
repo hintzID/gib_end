@@ -12,14 +12,14 @@
             @csrf
 
             <div class="mb-4">
-                <label for="name" class="text-gray-800 font-bold">Username</label>
+                <label for="name" class="text-gray-800 font-bold dark:text-white">Username</label>
                 <input type="text" name="name" id="name"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="email" class="text-gray-800 font-bold">Akun</label>
+                <label for="email" class="text-gray-800 font-bold dark:text-white">Akun</label>
                 <select name="email" id="email"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -34,7 +34,7 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="anggota_id" class="text-gray-800 font-bold">Konfirmasi Email</label>
+                <label for="anggota_id" class="text-gray-800 font-bold dark:text-white">Konfirmasi Email</label>
                 <select name="anggota_id" id="anggota_id"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -46,14 +46,14 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="password" class="text-gray-800 font-bold">Password</label>
+                <label for="password" class="text-gray-800 font-bold dark:text-white">Password</label>
                 <input type="password" name="password"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="peran_id" class="text-gray-800 font-bold">Peran</label>
+                <label for="peran_id" class="text-gray-800 font-bold dark:text-white">Peran</label>
                 <select name="peran_id"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -65,7 +65,7 @@
             </div>
             <div class="form-group">
                 <label for="photo"></label>
-                <input type="file" class="form-control-file" id="photo" name="photo">
+                <input type="file" class="form-control-file dark:text-white" id="photo" name="photo">
             </div>
 
             <button type="submit"

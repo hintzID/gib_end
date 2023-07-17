@@ -6,7 +6,7 @@
         <div class="flex flex-wrap">
             <div class="lg:w-full pr-4 pl-4 margin-tb">
                 <div class="pull-left p-3 bg-white-500 m-2 w-1/4">
-                    <h1 class="font-bold">Detail Pondok</h1>
+                    <h1 class="font-bold dark:text-white">Detail Pondok</h1>
                 </div>
             </div>
         </div>
@@ -14,20 +14,20 @@
         <div class="flex flex-wrap">
             <table class="table-auto w-full">
                 <tr>
-                    <td class="font-bold pr-4 border p-2">Calon Mitra:</td>
-                    <td class="border p-2">{{ $pondok->calonMitra->nama_pondok }}</td>
+                    <td class="font-bold pr-4 border p-2 dark:text-white">Calon Mitra:</td>
+                    <td class="border p-2 dark:text-white">{{ $pondok->calonMitra->nama_pondok }}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold pr-4 border p-2">Contact Person:</td>
-                    <td class="border p-2">{{ $pondok->contact_person }}</td>
+                    <td class="font-bold pr-4 border p-2 dark:text-white">Contact Person:</td>
+                    <td class="border p-2 dark:text-white">{{ $pondok->contact_person }}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold pr-4 border p-2">No. HP Contact Person:</td>
-                    <td class="border p-2">{{ $pondok->no_hp_contact_person }}</td>
+                    <td class="font-bold pr-4 border p-2 dark:text-white">No. HP Contact Person:</td>
+                    <td class="border p-2 dark:text-white">{{ $pondok->no_hp_contact_person }}</td>
                 </tr>
                 <tr>
-                    <td class="font-bold pr-4 border p-2">Keterangan:</td>
-                    <td class="border p-2">{{ $pondok->keterangan }}</td>
+                    <td class="font-bold pr-4 border p-2 dark:text-white">Keterangan:</td>
+                    <td class="border p-2 dark:text-white">{{ $pondok->keterangan }}</td>
                 </tr>
             </table>
 

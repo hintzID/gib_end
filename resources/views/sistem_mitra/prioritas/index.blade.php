@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container mx-auto">
-        <h1 class="text-2xl font-bold mb-4">Prioritas List</h1>
+        <h1 class="text-2xl font-bold mb-4 dark:text-white">Daftar Grade</h1>
 
         @if(session('success'))
             <div class="bg-green-200 text-green-800 p-4 mb-4">
@@ -24,8 +24,8 @@
             <tbody>
                 @foreach($prioritas as $prioritas)
                     <tr>
-                        <td class="border py-2 px-4 text-center">{{ $prioritas->grade }}</td>
-                        <td class="border py-2 px-4 text-center">{{ $prioritas->persen }}%</td>
+                        <td class="border py-2 px-4 text-center dark:text-white">{{ $prioritas->grade }}</td>
+                        <td class="border py-2 px-4 text-center dark:text-white">{{ $prioritas->persen }}%</td>
                         <td class="border py-2 px-4 text-center">
                             <a href="{{ route('prioritas.edit', $prioritas->id) }}" class="text-blue-500 hover:text-blue-700 mr-2">Edit</a>
                             <form action="{{ route('prioritas.destroy', $prioritas->id) }}" method="POST" class="inline">

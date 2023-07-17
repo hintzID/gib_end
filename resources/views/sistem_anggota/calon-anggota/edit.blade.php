@@ -14,21 +14,21 @@
             @method('PUT')
 
             <div class="mb-6">
-                <label for="email" class="block text-lg font-bold text-gray-800 mb-2">Email</label>
+                <label for="email" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Email</label>
                 <input type="email" name="email"
                     class="block w-full py-2 px-3 mb-3 text-base text-gray-800 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                     value="{{ $calonAnggota->email }}" required>
             </div>
 
             <div class="mb-4">
-                <label for="nama_lengkap" class="block text-lg font-bold text-gray-800 mb-2">Nama Lengkap</label>
+                <label for="nama_lengkap" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Nama Lengkap</label>
                 <input type="text" name="nama_lengkap"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->nama_lengkap }}" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="gender" class="block text-lg font-bold text-gray-800 mb-2">Jenis Kelamin</label>
+                <label for="gender" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Jenis Kelamin</label>
                 <select name="gender"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -40,28 +40,28 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="tempat_lahir" class="block text-lg font-bold text-gray-800 mb-2">Tempat Lahir</label>
+                <label for="tempat_lahir" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Tempat Lahir</label>
                 <input type="text" name="tempat_lahir"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->tempat_lahir }}" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="tanggal_lahir" class="block text-lg font-bold text-gray-800 mb-2">Tanggal Lahir</label>
+                <label for="tanggal_lahir" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Tanggal Lahir</label>
                 <input type="date" name="tanggal_lahir"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->tanggal_lahir }}" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="alamat_lengkap" class="block text-lg font-bold text-gray-800 mb-2">Alamat Lengkap</label>
+                <label for="alamat_lengkap" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Alamat Lengkap</label>
                 <textarea name="alamat_lengkap"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>{{ $calonAnggota->alamat_lengkap }}</textarea>
             </div>
             <br>
             <div class="mb-4">
-                <label for="status" class="block text-lg font-bold text-gray-800 mb-2">Status</label>
+                <label for="status" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Status</label>
                 <select name="status"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -74,21 +74,21 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="pekerjaan" class="block text-lg font-bold text-gray-800 mb-2">Pekerjaan</label>
+                <label for="pekerjaan" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Pekerjaan</label>
                 <input type="text" name="pekerjaan"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->pekerjaan }}" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="no_hp" class="block text-lg font-bold text-gray-800 mb-2">No.Telp / WA</label>
+                <label for="no_hp" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">No.Telp / WA</label>
                 <input type="text" name="no_hp"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->no_hp }}" required>
             </div>
             <br>
             <div class="mb-4">
-                <label for="pilihan_kontrbusi" class="block text-lg font-bold text-gray-800 mb-2">Pilihan kontribusi</label>
+                <label for="pilihan_kontrbusi" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Pilihan kontribusi</label>
                 <select name="pilihan_kontrbusi"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     required>
@@ -115,7 +115,7 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="organisasi_diikuti" class="block text-lg font-bold text-gray-800 mb-2">Organisasi
+                <label for="organisasi_diikuti" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Organisasi
                     Diikuti</label>
                 <input type="text" name="organisasi_diikuti"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
@@ -123,7 +123,7 @@
             </div>
             <br>
             <div class="mb-4">
-                <label for="tentang_paskas" class="block text-lg font-bold text-gray-800 mb-2">Tentang PASKAS</label>
+                <label for="tentang_paskas" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Tentang PASKAS</label>
                 <input type="text" name="tentang_paskas"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->tentang_paskas }}" required>
@@ -133,7 +133,7 @@
                 <input type="checkbox" name="pilar_paskas" id="pilar_paskas" value="true"
                     {{ $calonAnggota->pilar_paskas ? 'checked' : '' }}>
                 <input type="hidden" name="pilar_paskas" id="hidden_pilar_paskas" value="{{ $calonAnggota->pilar_paskas ? 'true' : 'false' }}">
-                <label for="pilar_paskas" style="display:inline">Konfirmasi kemauan untuk melaksanakan pilar dakwah PASKAS
+                <label for="pilar_paskas" style="display:inline; color:white;">Konfirmasi kemauan untuk melaksanakan pilar dakwah PASKAS
                     (Birrul Walidain, Membaca Al Qur'an 1 hari 1 halaman, Sholat Tepat Awal Waktu dan INSPIRING—infaq
                     sering-sering)</label>
             </div>
@@ -149,7 +149,7 @@
 
             <br>
             <div class="mb-4">
-                <label for="doa_harapan" class="block text-lg font-bold text-gray-800 mb-2">Do'a & Harapan</label>
+                <label for="doa_harapan" class="block text-lg font-bold text-gray-800 mb-2 dark:text-white">Do'a & Harapan</label>
                 <input type="text" name="doa_harapan"
                     class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
                     value="{{ $calonAnggota->doa_harapan }}" required>

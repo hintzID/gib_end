@@ -51,7 +51,8 @@
                             <div class="mb-4">
                                 <strong>Keterangan:</strong>
                                 <textarea class="block appearance-none dark:bg-gray-300 dark:text-blue-900 w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
-                                          style="height:150px" name="keterangan" placeholder="Keterangan"></textarea>
+                                          style="height:150px" name="keterangan" placeholder="Keterangan">
+                                </textarea>
                             </div>
                         </div>
 

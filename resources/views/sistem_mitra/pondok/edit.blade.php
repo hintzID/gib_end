@@ -51,7 +51,7 @@
                     <div class="mb-4">
                         <strong>Contact Person:</strong>
                         <input type="text" name="contact_person"
-                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded dark:bg-gray-700 dark:text-white"
                             placeholder="Contact Person" value="{{ $pondok->contact_person }}">
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <div class="mb-4">
                         <strong>No. HP Contact Person:</strong>
                         <input type="number" name="no_hp_contact_person"
-                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded dark:bg-gray-700 dark:text-white"
                             placeholder="No. HP Contact Person" value="{{ $pondok->no_hp_contact_person }}">
                     </div>
                 </div>
@@ -67,7 +67,7 @@
                     <div class="mb-4">
                         <strong>Keterangan:</strong>
                         <textarea
-                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded"
+                            class="block appearance-none w-full py-1 px-2 mb-1 text-base leading-normal bg-white text-gray-800 border border-gray-200 rounded dark:bg-gray-700 dark:text-white"
                             style="height:150px" name="keterangan" placeholder="Keterangan">{{ $pondok->keterangan }}</textarea>
                     </div>
                 </div>
