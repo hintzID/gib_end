@@ -74,7 +74,7 @@ class CalonMitraController extends Controller
             'keterangan_fasilitas' => 'nullable',
             'sumber_air' => 'required',
             'tingkat_layak' => 'required',
-            'prioritas_id' => 'required',
+            'prioritas_id' => 'nullable',
         ]);
 
         CalonMitra::create($validatedData);
@@ -89,7 +89,7 @@ class CalonMitraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(CalonMitra $calonMitra)
-    {   
+    {
         return view('sistem_mitra.calon-mitra.show', compact('calonMitra'));
     }
 
@@ -129,7 +129,7 @@ class CalonMitraController extends Controller
             'keterangan_fasilitas' => 'nullable',
             'sumber_air' => 'required',
             'tingkat_layak' => 'required',
-            'prioritas_id' => 'required',
+            'prioritas_id' => 'nullable',
         ]);
 
         $calonMitra->update($validatedData);
